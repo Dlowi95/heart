@@ -508,7 +508,7 @@
 
 		HT.activeWarranty()
 
-		HT.showFakeOrder()
+		// HT.showFakeOrder()
 
 		HT.showAgencyInformation()
 		HT.wrapTable()

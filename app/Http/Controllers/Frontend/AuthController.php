@@ -29,7 +29,7 @@ class AuthController extends FrontendController
     public function index(){
         $system = $this->system;
         $seo = [
-            'meta_title' => 'Trang đăng nhập - Hệ thống website '.$this->system['homepage_company'],
+            'meta_title' => 'Trang đăng nhập',
             'meta_keyword' => '',
             'meta_description' => '',
             'meta_image' => '',
@@ -43,11 +43,11 @@ class AuthController extends FrontendController
   
     public function register(){
         $seo = [
-            'meta_title' => 'Thông tin kích hoạt bảo hành',
+            'meta_title' => 'Trang đăng ký tài khoản',
             'meta_keyword' => '',
             'meta_description' => '',
             'meta_image' => '',
-            'canonical' => route('customer.profile')
+            'canonical' => route('customer.register')
         ];
         $system = $this->system;
         return view('frontend.auth.customer.register',compact(
@@ -86,20 +86,20 @@ class AuthController extends FrontendController
         if(!is_null($customer)){
             Mail::to($emailReset)->send(new ResetPasswordMail($emailReset));
             return redirect()->route('fe.auth.login')
-            ->with('success','Gửi yêu cầu cập nhật mật khẩu thành công, vui lòng truy cập email của bạn để cập nhật mật khẩu mới');
+            ->with('success','Gửi yêu cầu cập nhật mật khẩu thành công, Vui lòng truy cập Email của bạn để cập nhật mật khẩu mới');
         }
-        return redirect()->route('forgot.customer.password')->with('error','Gửi yêu cầu cập nhật mật khẩu không thành công, email không tồn tại trong hệ thống');
+        return redirect()->route('forgot.customer.password')->with('error','Email không tồn tại trong hệ thống. Vui lòng nhập lại!');
     }
 
 
     public function updatePassword(Request $request){
         $email = rtrim(urldecode($request->getQueryString('email')), '=');
         $seo = [
-            'meta_title' => 'Thông tin kích hoạt bảo hành',
+            'meta_title' => 'Thay đổi mật khẩu',
             'meta_keyword' => '',
             'meta_description' => '',
             'meta_image' => '',
-            'canonical' => route('customer.profile')
+            'canonical' => route('customer.update.password')
         ];
         $system = $this->system;
         $route = 'customer.password.reset';
@@ -133,7 +133,7 @@ class AuthController extends FrontendController
             $request->session()->regenerate();
             return redirect()->route('home.index')->with('success', 'Đăng nhập thành công');
         }
-        return redirect()->route('home.index')->with('error','Email hoặc Mật khẩu không chính xác');
+        return redirect()->route('fe.auth.login')->with('error','Email hoặc Mật khẩu không chính xác');
     }
 
 

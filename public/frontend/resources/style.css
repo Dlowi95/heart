@@ -644,7 +644,7 @@ ul li{
         width: 26px !important;
     }
     .mobile-widget .btn-addCart{
-        margin-right: 20px;
+        margin-right: 5px;
     }
     .panel-flash-sale{
         display: block !important;
@@ -2820,4 +2820,166 @@ bottom-support-online .animated.infinite {
     padding: 0 5px;
     color: #ccc !important;
     content: "/\00a0";
+}
+
+
+/* Căn chỉnh và style cho danh sách */
+ul.main-menu {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+}
+
+ul.main-menu > li {
+    position: relative;
+}
+
+ul.main-menu > li.children > a::after {
+    content: '';
+    display: inline-block;
+    width: 10px;
+    height: 10px;
+    background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='10' height='10' viewBox='0 0 24 24' fill='none' stroke='white' stroke-width='2' stroke-linecap='round' stroke-linejoin='round'%3E%3Cpolyline points='6 9 12 15 18 9'%3E%3C/polyline%3E%3C/svg%3E");
+    background-size: contain;
+    background-repeat: no-repeat;
+    margin-left: 5px;
+    transition: transform 0.3s ease;
+}
+
+/* Hiệu ứng xoay SVG khi hover */
+ul.main-menu > li.children:hover > a::after {
+    transform: rotate(-180deg);
+}
+
+/* Ẩn menu con ban đầu */
+ul.main-menu .dropdown-menu {
+    display: none;
+    position: absolute;
+    top: 100%;
+    left: 0;
+    background-color: #fff;
+    box-shadow: 0 8px 16px rgba(0, 0, 0, 0.2);
+    min-width: 200px; /* Đặt chiều rộng tối thiểu cho menu con */
+    z-index: 1000;
+}
+
+/* Hiển thị menu con khi hover vào mục cha */
+ul.main-menu > li.children:hover > .dropdown-menu {
+    display: block;
+}
+
+ul.main-menu .dropdown-menu li a {
+    color: #333;
+    text-decoration: none;
+}
+
+
+.header-account {
+    background-color: white;          /* Nền trắng ban đầu */
+    border: 2px solid #A1ACE1;        /* Viền màu chính */
+    border-radius: 8px;               /* Bo góc nhẹ */
+    padding: 10px;                    /* Khoảng cách bên trong */
+    display: inline-block;            /* Để bao gọn phần tử bên trong */
+    transition: background-color 0.3s ease, color 0.3s ease;  /* Hiệu ứng chuyển màu mượt */
+    cursor: pointer;
+}
+
+.header-account button {
+    background: none;                 /* Xóa nền của button */
+    border: none;                     /* Xóa viền của button */
+    color: #A1ACE1;                   /* Màu biểu tượng ban đầu */
+    font-size: 16px;                  /* Cỡ chữ cho biểu tượng */
+    cursor: pointer;
+}
+
+/* Hover hiệu ứng */
+.header-account:hover {
+    background-color: #A1ACE1;        /* Màu nền khi hover */
+}
+
+.header-account:hover button {
+    color: white;                     /* Đổi màu biểu tượng khi hover */
+}
+
+.login-mobile{
+    margin-right: 18px;
+    color: #7688de; /* Màu chữ */
+    border: none; /* Không có viền */
+    border-radius: 5px; /* Bo góc cho nút */
+    font-size: 25px; /* Kích thước chữ */
+}
+
+/* Phần tài khoản */
+/* Đặt kiểu cho dropdown chính */
+.dropdown {
+    position: relative;
+    display: inline-block;
+    font-family: Arial, sans-serif;
+}
+
+/* Nút dropdown */
+.dropdown-toggle {
+    background-color: white;
+    
+    cursor: pointer;
+    font-size: 16px;
+    border: none; /* Xóa viền của nút */
+    border-radius: 4px;
+    color: #333;
+    transition: background-color 0.3s, color 0.3s;
+    display: flex;
+    align-items: center;
+    gap: 5px;
+}
+
+/* Biểu tượng mũi tên */
+.arrow-icon {
+    display: inline-block;
+    width: 8px;
+    height: 8px;
+    border: solid #333;
+    border-width: 0 2px 2px 0;
+    transform: rotate(45deg); /* Xoay 45 độ để tạo thành mũi tên xuống */
+    margin-left: 7px;
+}
+/* Dropdown menu */
+.dropdown-menu {
+    display: none;
+    position: absolute;
+    top: 100%;
+    left: 0;
+    min-width: 160px;
+    background-color: white;
+    box-shadow: 0px 8px 16px rgba(0, 0, 0, 0.2);
+    border-radius: 4px;
+    padding: 5px 0;
+    z-index: 1000;
+    border: 1px solid #ddd;
+}
+
+/* Các liên kết bên trong dropdown */
+.dropdown-menu a {
+    display: block;
+    padding: 10px 15px;
+    color: #333;
+    text-decoration: none;
+    font-size: 14px;
+    transition: background-color 0.3s, color 0.3s;
+}
+
+.dropdown-menu a:hover {
+    background-color: #f1f1f1;
+}
+
+/* Dòng phân cách */
+.divider {
+    height: 1px;
+    background-color: #ddd;
+    margin: 5px 0;
+}
+
+/* Hiển thị dropdown menu khi hover vào nút */
+.dropdown:hover .dropdown-menu,
+.dropdown:focus-within .dropdown-menu {
+    display: block;
 }

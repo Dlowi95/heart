@@ -29,7 +29,7 @@ class OrderMail extends Mailable
     public function envelope(): Envelope
     {
         return new Envelope(
-            subject: 'Thông báo đặt hàng từ hệ thống Website',
+            subject: 'Thông báo đặt hàng từ hệ thống Thú Cưng PetFamily',
         );
     }
 

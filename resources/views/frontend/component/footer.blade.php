@@ -9,7 +9,7 @@
                 <div class="uk-flex uk-flex-middle">    
                     <form action="" class="uk-form subcribe-form">
                         <input type="text" name="phone" value="" placeholder="Tạo tài khoản nhận Ưu Đãi ngay 🎁" disabled>
-                        <button><a class="btn btn-primary p-5" href="#" role="button" style="color: aliceblue">Đăng ký</a></button>
+                        <button><a href="{{ route('customer.register') }}" role="button" style="color: aliceblue">Đăng ký</a></button>
                     </form>
                     <div class="social">
                         <div class="uk-flex uk-flex-middle">
@@ -26,8 +26,13 @@
 <footer class="footer">
     <div class="upper">
         <div class="uk-container uk-container-center">
-            <div class="footer-information">
-                <div class="footer-logo"><img src="{{ $system['homepage_logo'] }}" alt=""></div>
+            <div class="footer-information mt15">
+                <div class="footer-logo uk-flex uk-flex-center uk-flex-space-between"><img src="{{ $system['homepage_logo'] }}" alt="">
+                    <div class="header-hotline mt10">
+                        <div class="text">Hotline</div>
+                        <div class="hotline-number">{{ $system['contact_hotline'] }}</div>
+                    </div>
+                </div>
                 <div class="company-name">{{ $system['homepage_company'] }}</div>
                 @if(isset($menu['footer-menu']))
                 <div class="uk-grid uk-grid-medium">

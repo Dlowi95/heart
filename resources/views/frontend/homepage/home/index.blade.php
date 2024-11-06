@@ -89,7 +89,7 @@
                                 $description = cutnchar(strip_tags($post->languages->first()->pivot->description), 100);
                                 $image = $post->image;
                             @endphp
-                            <div class="uk-width-1-2 uk-width-small-1-2 uk-width-medium-1-3 uk-width-large-1-5 pó ">
+                            <div class="uk-width-1-2 uk-width-small-1-2 uk-width-medium-1-3 uk-width-large-1-5 post">
                                 <div class="news-item">
                                     <a href="{{ $canonical }}" class="image img-cover"><img src="{{ $image }}" alt="{{ $name }}"></a>
                                     <div class="info">

@@ -30,6 +30,7 @@
 
 <link rel="stylesheet" href="https://unpkg.com/swiper/swiper-bundle.min.css">
 <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@3.3.2/dist/css/bootstrap.min.css" integrity="sha384-+YQ4uArW5y+jC2TVaFRB2lp3fFV8n3T9twsepaXtQct5Y6l/3aBZ8plFfCgn0OsG" crossorigin="anonymous">
+
 <!-- <link href="backend/css/bootstrap.min.css" rel="stylesheet"> -->
 @php
     $coreCss = [

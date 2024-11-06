@@ -25,7 +25,7 @@
                                         <span
                                             style="display:inline-block; vertical-align:middle; margin:10px 0 10px; border-bottom:1px solid #cecece; width:100px;"></span>
                                         <p style="color:#455056; font-size:15px;line-height:24px; margin:0;">
-                                            Chúng tôi không thể đơn giản gửi cho bạn mật khẩu cũ của bạn. Một liên kết duy nhất để đặt lại mật khẩu đã được tạo cho bạn. 
+                                            Chúng tôi không thể gửi lại cho bạn mật khẩu cũ. Một liên kết duy nhất để đặt lại mật khẩu đã được tạo cho bạn. 
                                             Để đặt lại mật khẩu của bạn, hãy nhấp vào liên kết sau và làm theo hướng dẫn.
                                         </p>
                                         <a href="{{ route('customer.update.password', $email) }}" style="background:#f69425;text-decoration:none !important; font-weight:500; margin-top:35px; color:#fff;text-transform:uppercase; font-size:14px;padding:10px 24px;display:inline-block;border-radius:50px;">Reset Password</a>
